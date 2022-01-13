@@ -26,8 +26,6 @@ public class GK_Quiz {
         System.out.println("Your final point is: "+sum);
     }
 
-
-
     static void writeList() throws IOException, ParseException {
         String filename = "./src/main/resources/Questions.json";
         JSONParser jsonParser = new JSONParser();
@@ -66,6 +64,14 @@ public class GK_Quiz {
         jsonObject8.put("id", 8);
         jsonObject8.put("Question", "On which year the freedom war took place in Bangladesh");
         jsonObject8.put("Answer", "1971");
+        JSONObject jsonObject9 = new JSONObject();
+        jsonObject9.put("id", 9);
+        jsonObject9.put("Question", "What is the biggest island in the world?");
+        jsonObject9.put("Answer", "Greenland");
+        JSONObject jsonObject10 = new JSONObject();
+        jsonObject10.put("id", 10);
+        jsonObject10.put("Question", "How many continents is there in the world");
+        jsonObject10.put("Answer", "7");
         jsonArray.add(jsonObject1);
         jsonArray.add(jsonObject2);
         jsonArray.add(jsonObject3);
@@ -74,11 +80,11 @@ public class GK_Quiz {
         jsonArray.add(jsonObject6);
         jsonArray.add(jsonObject7);
         jsonArray.add(jsonObject8);
+        jsonArray.add(jsonObject9);
+        jsonArray.add(jsonObject10);
         file.write(jsonArray.toJSONString());
         file.flush();
         file.close();
-
-
     }
 
     static void printQuestion(int i) throws IOException, ParseException {
@@ -107,6 +113,5 @@ public class GK_Quiz {
         }
         return c;
     }
-
 }
 
